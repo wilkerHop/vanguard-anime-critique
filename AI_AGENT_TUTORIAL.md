@@ -6,12 +6,13 @@ A comprehensive guide for AI agents to publish any HTML file to GitHub Pages wit
 
 1. [Prerequisites](#prerequisites)
 2. [Project Structure Setup](#project-structure-setup)
-3. [Commitlint Configuration](#commitlint-configuration)
-4. [GitHub Actions Workflow](#github-actions-workflow)
-5. [Commit Message Conventions](#commit-message-conventions)
-6. [Step-by-Step Publishing Process](#step-by-step-publishing-process)
-7. [Automation Scripts](#automation-scripts)
-8. [Troubleshooting](#troubleshooting)
+3. [Neo-Brutalist Design Transformation](#neo-brutalist-design-transformation)
+4. [Commitlint Configuration](#commitlint-configuration)
+5. [GitHub Actions Workflow](#github-actions-workflow)
+6. [Commit Message Conventions](#commit-message-conventions)
+7. [Step-by-Step Publishing Process](#step-by-step-publishing-process)
+8. [Automation Scripts](#automation-scripts)
+9. [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 
@@ -47,7 +48,1193 @@ my-html-project/
 ├── .commitlintrc.json     # Commitlint configuration
 └── package.json           # Node.js dependencies (optional)
 ```
+## Neo-Brutalist Design Transformation
 
+### Overview
+
+Neo-brutalist design is characterized by bold, aggressive aesthetics that prioritize raw visual impact over subtlety. This section teaches AI agents how to transform any HTML file into a neo-brutalist masterpiece.
+
+### Core Design Principles
+
+#### 1. Visual Elements
+
+| Principle | Specification | Example |
+|-----------|---------------|---------|
+| **Borders** | 3px-5px solid black on ALL elements | `border: 4px solid #000` |
+| **Shadows** | Hard, unblurred drop shadows | `box-shadow: 5px 5px 0px 0px #000` |
+| **Colors** | High-contrast, clashing neon palette | `#FFFF00`, `#FF00FF`, `#00FFFF` |
+| **Typography** | Bold, utilitarian, uppercase | Space Mono, Archivo Black |
+| **Backgrounds** | Stark white or black | `#FFFFFF`, `#000000` |
+
+#### 2. Color Palette
+
+```css
+:root {
+  --neon-yellow: #FFFF00;
+  --hot-pink: #FF00FF;
+  --cyan: #00FFFF;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+```
+
+#### 3. Typography Stack
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+```
+
+```css
+body {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+```
+
+### Step-by-Step Transformation Guide
+
+#### Step 1: Analyze Existing HTML
+
+First, identify the current design elements:
+
+```bash
+# View HTML structure
+cat index.html | grep -E "<(div|section|header|nav|main|footer)" | head -20
+
+# Identify existing CSS
+grep -E "(class=|id=|style=)" index.html | head -10
+```
+
+#### Step 2: Replace Fonts
+
+**Before:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+</style>
+```
+
+**After:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+h1, h2, h3, .brutal-font {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+</style>
+```
+
+#### Step 3: Replace Color Palette
+
+**Transformation Script:**
+
+```javascript
+// Color mapping
+const colorMap = {
+  // Map soft colors to neon
+  '#F2F0E9': '#FFFFFF',  // Beige → White
+  '#2D2D2A': '#000000',  // Dark gray → Black
+  '#8C2F2F': '#FF00FF',  // Muted red → Hot pink
+  '#4B5563': '#00FFFF',  // Slate → Cyan
+  'rgb(242, 240, 233)': '#FFFFFF',
+  'rgba(0,0,0,0.05)': '#000000'
+};
+
+// Replace colors in HTML/CSS
+for (const [oldColor, newColor] of Object.entries(colorMap)) {
+  // Replace in styles
+  content = content.replace(new RegExp(oldColor, 'gi'), newColor);
+}
+```
+
+#### Step 4: Add Brutal Borders
+
+**Before:**
+```css
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+```
+
+**After:**
+```css
+.card {
+  border: 4px solid #000;
+  border-radius: 0;  /* Remove rounded corners */
+  box-shadow: 5px 5px 0px 0px #000;
+}
+
+.brutal-border {
+  border: 4px solid var(--black);
+}
+
+.brutal-shadow {
+  box-shadow: 5px 5px 0px 0px var(--black);
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px 0px var(--black);
+}
+```
+
+#### Step 5: Transform Buttons
+
+**Before:**
+```css
+button {
+  background: linear-gradient(to bottom, #667eea, #764ba2);
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+```
+
+**After:**
+```css
+button {
+  background: var(--neon-yellow);
+  color: var(--black);
+  border: 4px solid var(--black);
+  border-radius: 0;
+  box-shadow: 4px 4px 0px 0px var(--black);
+  transition: transform 0.1s, box-shadow 0.1s;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--black);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--black);
+}
+```
+
+#### Step 6: Add Marquee Banner
+
+```html
+<!-- Add at top of body -->
+<div class="marquee-container">
+  <div class="marquee-text">
+    ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡ NO COMPROMISES ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡
+  </div>
+</div>
+```
+
+```css
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--black);
+  color: var(--neon-yellow);
+  padding: 8px 0;
+  border-top: 4px solid var(--black);
+  border-bottom: 4px solid var(--black);
+}
+
+.marquee-text {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+```
+
+### Complete Transformation Script
+
+Create `neobrutalize.js`:
+
+```javascript
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+// Neo-brutalist configuration
+const config = {
+  colors: {
+    neonYellow: '#FFFF00',
+    hotPink: '#FF00FF',
+    cyan: '#00FFFF',
+    black: '#000000',
+    white: '#FFFFFF'
+  },
+  fonts: {
+    body: 'Space Mono',
+    heading: 'Archivo Black'
+  },
+  borders: '4px solid #000',
+  shadow: '5px 5px 0px 0px #000'
+};
+
+function transformHTML(htmlContent) {
+  // 1. Update font links
+  const fontLink = '<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">';
+  
+  if (!htmlContent.includes('Space+Mono')) {
+    htmlContent = htmlContent.replace('</head>', `  ${fontLink}\n</head>`);
+  }
+
+  // 2. Add CSS variables and brutal styles
+  const brutalCSS = `
+    <style>
+      :root {
+        --neon-yellow: ${config.colors.neonYellow};
+        --hot-pink: ${config.colors.hotPink};
+        --cyan: ${config.colors.cyan};
+        --black: ${config.colors.black};
+        --white: ${config.colors.white};
+      }
+      
+      body {
+        font-family: '${config.fonts.body}', monospace;
+        background-color: var(--white);
+        color: var(--black);
+        font-weight: 700;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: '${config.fonts.heading}', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+      }
+      
+      .brutal-border {
+        border: ${config.borders};
+      }
+      
+      .brutal-shadow {
+        box-shadow: ${config.shadow};
+      }
+      
+      .brutal-btn {
+        border: ${config.borders};
+        box-shadow: 4px 4px 0px 0px var(--black);
+        transition: transform 0.1s, box-shadow 0.1s;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: var(--neon-yellow);
+        color: var(--black);
+      }
+      
+      .brutal-btn:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px 0px var(--black);
+      }
+      
+      .brutal-btn:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px 0px var(--black);
+      }
+      
+      @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+        background: var(--black);
+        color: var(--neon-yellow);
+        padding: 8px 0;
+        border-top: 4px solid var(--black);
+        border-bottom: 4px solid var(--black);
+      }
+      
+      .marquee-text {
+        display: inline-block;
+        animation: marquee 20s linear infinite;
+      }
+    </style>
+  `;
+  
+  if (!htmlContent.includes('brutal-border')) {
+    htmlContent = htmlContent.replace('</head>', `${brutalCSS}\n</head>`);
+  }
+
+  // 3. Add marquee banner after opening body tag
+  const marquee = `
+    <div class="marquee-container">
+      <div class="marquee-text">
+        ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡ NO COMPROMISES ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡
+      </div>
+    </div>
+  `;
+  
+  if (!htmlContent.includes('marquee-container')) {
+    htmlContent = htmlContent.replace(/<body[^>]*>/, '$&\n' + marquee);
+  }
+
+  // 4. Replace rounded corners
+  htmlContent = htmlContent.replace(/border-radius:\s*\d+px/g, 'border-radius: 0');
+  htmlContent = htmlContent.replace(/rounded(-\w+)?/g, '');
+
+  // 5. Replace soft shadows with hard shadows
+  htmlContent = htmlContent.replace(/box-shadow:\s*[^;]+rgba\([^)]+\)[^;]*/g, 
+    'box-shadow: 5px 5px 0px 0px #000');
+
+  // 6. Replace transitional buttons with brutal buttons
+  htmlContent = htmlContent.replace(/<button([^>]*)class="([^"]*)"/g, 
+    '<button$1class="$2 brutal-btn"');
+
+  return htmlContent;
+}
+
+// Main execution
+const inputFile = process.argv[2] || 'index.html';
+const outputFile = process.argv[3] || inputFile;
+
+try {
+  const html = fs.readFileSync(inputFile, 'utf8');
+  const transformed = transformHTML(html);
+  fs.writeFileSync(outputFile, transformed, 'utf8');
+  
+  console.log('✅ Neo-brutalist transformation complete!');
+  console.log(`📝 Output: ${outputFile}`);
+} catch (error) {
+  console.error('❌ Error:', error.message);
+  process.exit(1);
+}
+```
+
+**Usage:**
+```bash
+# Transform existing HTML
+node neobrutalize.js index.html index.html
+
+# Or create new file
+node neobrutalize.js old.html new-brutal.html
+```
+
+### Manual Transformation Checklist
+
+Use this checklist when manually transforming HTML:
+
+```markdown
+## Neo-Brutalist Transformation Checklist
+
+### Typography
+- [ ] Replace serif/san-serif fonts with Space Mono (body)
+- [ ] Replace heading fonts with Archivo Black
+- [ ] Set all text to uppercase or bold (700 weight)
+- [ ] Remove font smoothing/anti-aliasing
+
+### Colors
+- [ ] Replace background with stark white (#FFFFFF) or black (#000000)
+- [ ] Replace primary accent with neon yellow (#FFFF00)
+- [ ] Replace secondary accent with hot pink (#FF00FF)
+- [ ] Replace tertiary with cyan (#00FFFF)
+- [ ] Remove all gradients
+- [ ] Remove transparency/opacity (except for overlays)
+
+### Borders & Shadows
+- [ ] Add 4px solid black borders to ALL containers
+- [ ] Replace border-radius with 0 (no rounded corners)
+- [ ] Replace soft shadows with hard shadows (5px 5px 0px 0px #000)
+- [ ] Remove blur from ALL elements
+
+### Interactive Elements
+- [ ] Add click-translation effects to buttons (translate on active)
+- [ ] Remove smooth transitions (max 0.1s for snappy feel)
+- [ ] Add brutal-btn class to all buttons
+- [ ] Add hover state with increased shadow
+
+### Layout
+- [ ] Add marquee banner at top
+- [ ] Ensure grid-based layout with clear separation
+- [ ] Remove subtle spacing, use bold gaps
+- [ ] Remove card elevation, use flat design
+
+### Components
+- [ ] Transform navigation to brutal style
+- [ ] Update form inputs with black borders
+- [ ] Replace icons with bold symbols (⚡ ✓ ✗ ▲ ▼)
+- [ ] Remove loading spinners, use text
+
+### Final Polish
+- [ ] Test all interactive elements
+- [ ] Verify contrast ratios for accessibility
+- [ ] Ensure semantic HTML maintained
+- [ ] Add ARIA labels where needed
+```
+
+### Before/After Examples
+
+#### Example 1: Header Transformation
+
+**Before:**
+```html
+<header style="background: linear-gradient(to right, #667eea, #764ba2); 
+               padding: 2rem; 
+               border-radius: 8px;
+               box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+  <h1 style="font-family: 'Georgia', serif; 
+             color: white; 
+             font-weight: 400;">Welcome</h1>
+</header>
+```
+
+**After:**
+```html
+<header style="background: #000000; 
+               padding: 2rem; 
+               border: 4px solid #000;
+               border-radius: 0;
+               box-shadow: 8px 8px 0px 0px #000;">
+  <h1 style="font-family: 'Archivo Black', sans-serif; 
+             color: #FFFF00; 
+             text-transform: uppercase;
+             font-weight: 900;">WELCOME</h1>
+</header>
+```
+
+#### Example 2: Card Transformation
+
+**Before:**
+```css
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+```
+
+**After:**
+```css
+.card {
+  background: white;
+  padding: 1.5rem;
+  border: 4px solid #000;
+  border-radius: 0;
+  box-shadow: 5px 5px 0px 0px #000;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px #000;
+  background: #FFFF00;
+}
+```
+
+### Commit Message for Design Transformation
+
+When committing neo-brutalist design changes, use this format:
+
+```bash
+git commit -m "style: transform design to neo-brutalist aesthetic
+
+- Replace color palette with neon colors (yellow/pink/cyan)
+- Update typography to Space Mono and Archivo Black
+- Add 4px black borders to all containers
+- Implement hard drop shadows (no blur)
+- Add click-translation effects to buttons
+- Add animated marquee banner
+- Remove all rounded corners and gradients
+- Ensure high contrast for accessibility"
+```
+
+### Testing Neo-Brutalist Design
+
+```bash
+# 1. Visual test checklist
+echo "Testing neo-brutalist design:"
+echo "✓ All borders visible and 4px thick"
+echo "✓ Shadows are hard (no blur)"
+echo "✓ Colors are neon and high-contrast"
+echo "✓ Typography is bold and uppercase"
+echo "✓ No rounded corners"
+echo "✓ Buttons have translation effect on click"
+
+# 2. Accessibility test
+# Check contrast ratios
+curl -X POST https://webaim.org/resources/contrastchecker/ \
+  -d "foreground=000000&background=FFFF00"
+
+# 3. Open in browser for manual review
+open index.html
+```
+
+### Automated Brutalization Script
+
+Create `brutalize.sh` for automated transformation:
+
+```bash
+#!/bin/bash
+set -e
+
+HTML_FILE="${1:-index.html}"
+OUTPUT_FILE="${2:-$HTML_FILE}"
+
+echo "🎨 Brutalizing $HTML_FILE..."
+
+# Backup original
+cp "$HTML_FILE" "$HTML_FILE.backup"
+
+# Run transformation
+node neobrutalize.js "$HTML_FILE" "$OUTPUT_FILE"
+
+# Add to git with proper commit
+git add "$OUTPUT_FILE"
+git commit -m "style: apply neo-brutalist design transformation
+
+- Replace typography with Space Mono and Archivo Black
+- Implement neon color palette (yellow/pink/cyan)
+- Add 4px black borders and hard shadows
+- Add click-translation button effects
+- Add animated marquee banner"
+
+echo "✅ Brutalization complete!"
+echo "📝 Backup saved as: $HTML_FILE.backup"
+echo "🎨 Brutalized file: $OUTPUT_FILE"
+```
+
+### Key Takeaways
+
+1. **Bold Over Subtle**: Every element should make a statement
+2. **High Contrast**: Accessibility through extreme contrast
+3. **No Softness**: Hard edges, hard shadows, no blur
+4. **Utilitarian Typography**: Function over form, but bold
+5. **Aggressive Colors**: Neon palette that demands attention
+6. **Raw Interactions**: Snappy, translation-based effects
+
+Neo-brutalist design isn't about being difficult to use—it's about being impossible to ignore.
+
+## Neo-Brutalist Design Transformation
+
+### Overview
+
+Neo-brutalist design is characterized by bold, aggressive aesthetics that prioritize raw visual impact over subtlety. This section teaches AI agents how to transform any HTML file into a neo-brutalist masterpiece.
+
+### Core Design Principles
+
+#### 1. Visual Elements
+
+| Principle | Specification | Example |
+|-----------|---------------|---------|
+| **Borders** | 3px-5px solid black on ALL elements | `border: 4px solid #000` |
+| **Shadows** | Hard, unblurred drop shadows | `box-shadow: 5px 5px 0px 0px #000` |
+| **Colors** | High-contrast, clashing neon palette | `#FFFF00`, `#FF00FF`, `#00FFFF` |
+| **Typography** | Bold, utilitarian, uppercase | Space Mono, Archivo Black |
+| **Backgrounds** | Stark white or black | `#FFFFFF`, `#000000` |
+
+#### 2. Color Palette
+
+```css
+:root {
+  --neon-yellow: #FFFF00;
+  --hot-pink: #FF00FF;
+  --cyan: #00FFFF;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+```
+
+#### 3. Typography Stack
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+```
+
+```css
+body {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+```
+
+### Step-by-Step Transformation Guide
+
+#### Step 1: Analyze Existing HTML
+
+First, identify the current design elements:
+
+```bash
+# View HTML structure
+cat index.html | grep -E "<(div|section|header|nav|main|footer)" | head -20
+
+# Identify existing CSS
+grep -E "(class=|id=|style=)" index.html | head -10
+```
+
+#### Step 2: Replace Fonts
+
+**Before:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+</style>
+```
+
+**After:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+h1, h2, h3, .brutal-font {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+</style>
+```
+
+#### Step 3: Replace Color Palette
+
+**Transformation Script:**
+
+```javascript
+// Color mapping
+const colorMap = {
+  // Map soft colors to neon
+  '#F2F0E9': '#FFFFFF',  // Beige → White
+  '#2D2D2A': '#000000',  // Dark gray → Black
+  '#8C2F2F': '#FF00FF',  // Muted red → Hot pink
+  '#4B5563': '#00FFFF',  // Slate → Cyan
+  'rgb(242, 240, 233)': '#FFFFFF',
+  'rgba(0,0,0,0.05)': '#000000'
+};
+
+// Replace colors in HTML/CSS
+for (const [oldColor, newColor] of Object.entries(colorMap)) {
+  // Replace in styles
+  content = content.replace(new RegExp(oldColor, 'gi'), newColor);
+}
+```
+
+#### Step 4: Add Brutal Borders
+
+**Before:**
+```css
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+```
+
+**After:**
+```css
+.card {
+  border: 4px solid #000;
+  border-radius: 0;  /* Remove rounded corners */
+  box-shadow: 5px 5px 0px 0px #000;
+}
+
+.brutal-border {
+  border: 4px solid var(--black);
+}
+
+.brutal-shadow {
+  box-shadow: 5px 5px 0px 0px var(--black);
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px 0px var(--black);
+}
+```
+
+#### Step 5: Transform Buttons
+
+**Before:**
+```css
+button {
+  background: linear-gradient(to bottom, #667eea, #764ba2);
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+```
+
+**After:**
+```css
+button {
+  background: var(--neon-yellow);
+  color: var(--black);
+  border: 4px solid var(--black);
+  border-radius: 0;
+  box-shadow: 4px 4px 0px 0px var(--black);
+  transition: transform 0.1s, box-shadow 0.1s;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--black);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--black);
+}
+```
+
+#### Step 6: Add Marquee Banner
+
+```html
+<!-- Add at top of body -->
+<div class="marquee-container">
+  <div class="marquee-text">
+    ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡ NO COMPROMISES ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡
+  </div>
+</div>
+```
+
+```css
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--black);
+  color: var(--neon-yellow);
+  padding: 8px 0;
+  border-top: 4px solid var(--black);
+  border-bottom: 4px solid var(--black);
+}
+
+.marquee-text {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+```
+
+### Complete Transformation Script
+
+Create `neobrutalize.js`:
+
+```javascript
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+// Neo-brutalist configuration
+const config = {
+  colors: {
+    neonYellow: '#FFFF00',
+    hotPink: '#FF00FF',
+    cyan: '#00FFFF',
+    black: '#000000',
+    white: '#FFFFFF'
+  },
+  fonts: {
+    body: 'Space Mono',
+    heading: 'Archivo Black'
+  },
+  borders: '4px solid #000',
+  shadow: '5px 5px 0px 0px #000'
+};
+
+function transformHTML(htmlContent) {
+  // 1. Update font links
+  const fontLink = '<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">';
+  
+  if (!htmlContent.includes('Space+Mono')) {
+    htmlContent = htmlContent.replace('</head>', `  ${fontLink}\n</head>`);
+  }
+
+  // 2. Add CSS variables and brutal styles
+  const brutalCSS = `
+    <style>
+      :root {
+        --neon-yellow: ${config.colors.neonYellow};
+        --hot-pink: ${config.colors.hotPink};
+        --cyan: ${config.colors.cyan};
+        --black: ${config.colors.black};
+        --white: ${config.colors.white};
+      }
+      
+      body {
+        font-family: '${config.fonts.body}', monospace;
+        background-color: var(--white);
+        color: var(--black);
+        font-weight: 700;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: '${config.fonts.heading}', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+      }
+      
+      .brutal-border {
+        border: ${config.borders};
+      }
+      
+      .brutal-shadow {
+        box-shadow: ${config.shadow};
+      }
+      
+      .brutal-btn {
+        border: ${config.borders};
+        box-shadow: 4px 4px 0px 0px var(--black);
+        transition: transform 0.1s, box-shadow 0.1s;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: var(--neon-yellow);
+        color: var(--black);
+      }
+      
+      .brutal-btn:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px 0px var(--black);
+      }
+      
+      .brutal-btn:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px 0px var(--black);
+      }
+      
+      @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+        background: var(--black);
+        color: var(--neon-yellow);
+        padding: 8px 0;
+        border-top: 4px solid var(--black);
+        border-bottom: 4px solid var(--black);
+      }
+      
+      .marquee-text {
+        display: inline-block;
+        animation: marquee 20s linear infinite;
+      }
+    </style>
+  `;
+  
+  if (!htmlContent.includes('brutal-border')) {
+    htmlContent = htmlContent.replace('</head>', `${brutalCSS}\n</head>`);
+  }
+
+  // 3. Add marquee banner after opening body tag
+  const marquee = `
+    <div class="marquee-container">
+      <div class="marquee-text">
+        ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡ NO COMPROMISES ⚡ NEO-BRUTALIST DESIGN ⚡ RAW VISUAL IMPACT ⚡
+      </div>
+    </div>
+  `;
+  
+  if (!htmlContent.includes('marquee-container')) {
+    htmlContent = htmlContent.replace(/<body[^>]*>/, '$&\n' + marquee);
+  }
+
+  // 4. Replace rounded corners
+  htmlContent = htmlContent.replace(/border-radius:\s*\d+px/g, 'border-radius: 0');
+  htmlContent = htmlContent.replace(/rounded(-\w+)?/g, '');
+
+  // 5. Replace soft shadows with hard shadows
+  htmlContent = htmlContent.replace(/box-shadow:\s*[^;]+rgba\([^)]+\)[^;]*/g, 
+    'box-shadow: 5px 5px 0px 0px #000');
+
+  // 6. Replace transitional buttons with brutal buttons
+  htmlContent = htmlContent.replace(/<button([^>]*)class="([^"]*)"/g, 
+    '<button$1class="$2 brutal-btn"');
+
+  return htmlContent;
+}
+
+// Main execution
+const inputFile = process.argv[2] || 'index.html';
+const outputFile = process.argv[3] || inputFile;
+
+try {
+  const html = fs.readFileSync(inputFile, 'utf8');
+  const transformed = transformHTML(html);
+  fs.writeFileSync(outputFile, transformed, 'utf8');
+  
+  console.log('✅ Neo-brutalist transformation complete!');
+  console.log(`📝 Output: ${outputFile}`);
+} catch (error) {
+  console.error('❌ Error:', error.message);
+  process.exit(1);
+}
+```
+
+**Usage:**
+```bash
+# Transform existing HTML
+node neobrutalize.js index.html index.html
+
+# Or create new file
+node neobrutalize.js old.html new-brutal.html
+```
+
+### Manual Transformation Checklist
+
+Use this checklist when manually transforming HTML:
+
+```markdown
+## Neo-Brutalist Transformation Checklist
+
+### Typography
+- [ ] Replace serif/san-serif fonts with Space Mono (body)
+- [ ] Replace heading fonts with Archivo Black
+- [ ] Set all text to uppercase or bold (700 weight)
+- [ ] Remove font smoothing/anti-aliasing
+
+### Colors
+- [ ] Replace background with stark white (#FFFFFF) or black (#000000)
+- [ ] Replace primary accent with neon yellow (#FFFF00)
+- [ ] Replace secondary accent with hot pink (#FF00FF)
+- [ ] Replace tertiary with cyan (#00FFFF)
+- [ ] Remove all gradients
+- [ ] Remove transparency/opacity (except for overlays)
+
+### Borders & Shadows
+- [ ] Add 4px solid black borders to ALL containers
+- [ ] Replace border-radius with 0 (no rounded corners)
+- [ ] Replace soft shadows with hard shadows (5px 5px 0px 0px #000)
+- [ ] Remove blur from ALL elements
+
+### Interactive Elements
+- [ ] Add click-translation effects to buttons (translate on active)
+- [ ] Remove smooth transitions (max 0.1s for snappy feel)
+- [ ] Add brutal-btn class to all buttons
+- [ ] Add hover state with increased shadow
+
+### Layout
+- [ ] Add marquee banner at top
+- [ ] Ensure grid-based layout with clear separation
+- [ ] Remove subtle spacing, use bold gaps
+- [ ] Remove card elevation, use flat design
+
+### Components
+- [ ] Transform navigation to brutal style
+- [ ] Update form inputs with black borders
+- [ ] Replace icons with bold symbols (⚡ ✓ ✗ ▲ ▼)
+- [ ] Remove loading spinners, use text
+
+### Final Polish
+- [ ] Test all interactive elements
+- [ ] Verify contrast ratios for accessibility
+- [ ] Ensure semantic HTML maintained
+- [ ] Add ARIA labels where needed
+```
+
+### Before/After Examples
+
+#### Example 1: Header Transformation
+
+**Before:**
+```html
+<header style="background: linear-gradient(to right, #667eea, #764ba2); 
+               padding: 2rem; 
+               border-radius: 8px;
+               box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+  <h1 style="font-family: 'Georgia', serif; 
+             color: white; 
+             font-weight: 400;">Welcome</h1>
+</header>
+```
+
+**After:**
+```html
+<header style="background: #000000; 
+               padding: 2rem; 
+               border: 4px solid #000;
+               border-radius: 0;
+               box-shadow: 8px 8px 0px 0px #000;">
+  <h1 style="font-family: 'Archivo Black', sans-serif; 
+             color: #FFFF00; 
+             text-transform: uppercase;
+             font-weight: 900;">WELCOME</h1>
+</header>
+```
+
+#### Example 2: Card Transformation
+
+**Before:**
+```css
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+```
+
+**After:**
+```css
+.card {
+  background: white;
+  padding: 1.5rem;
+  border: 4px solid #000;
+  border-radius: 0;
+  box-shadow: 5px 5px 0px 0px #000;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px #000;
+  background: #FFFF00;
+}
+```
+
+### Commit Message for Design Transformation
+
+When committing neo-brutalist design changes, use this format:
+
+```bash
+git commit -m "style: transform design to neo-brutalist aesthetic
+
+- Replace color palette with neon colors (yellow/pink/cyan)
+- Update typography to Space Mono and Archivo Black
+- Add 4px black borders to all containers
+- Implement hard drop shadows (no blur)
+- Add click-translation effects to buttons
+- Add animated marquee banner
+- Remove all rounded corners and gradients
+- Ensure high contrast for accessibility"
+```
+
+### Testing Neo-Brutalist Design
+
+```bash
+# 1. Visual test checklist
+echo "Testing neo-brutalist design:"
+echo "✓ All borders visible and 4px thick"
+echo "✓ Shadows are hard (no blur)"
+echo "✓ Colors are neon and high-contrast"
+echo "✓ Typography is bold and uppercase"
+echo "✓ No rounded corners"
+echo "✓ Buttons have translation effect on click"
+
+# 2. Accessibility test
+# Check contrast ratios
+curl -X POST https://webaim.org/resources/contrastchecker/ \
+  -d "foreground=000000&background=FFFF00"
+
+# 3. Open in browser for manual review
+open index.html
+```
+
+### Automated Brutalization Script
+
+Create `brutalize.sh` for automated transformation:
+
+```bash
+#!/bin/bash
+set -e
+
+HTML_FILE="${1:-index.html}"
+OUTPUT_FILE="${2:-$HTML_FILE}"
+
+echo "🎨 Brutalizing $HTML_FILE..."
+
+# Backup original
+cp "$HTML_FILE" "$HTML_FILE.backup"
+
+# Run transformation
+node neobrutalize.js "$HTML_FILE" "$OUTPUT_FILE"
+
+# Add to git with proper commit
+git add "$OUTPUT_FILE"
+git commit -m "style: apply neo-brutalist design transformation
+
+- Replace typography with Space Mono and Archivo Black
+- Implement neon color palette (yellow/pink/cyan)
+- Add 4px black borders and hard shadows
+- Add click-translation button effects
+- Add animated marquee banner"
+
+echo "✅ Brutalization complete!"
+echo "📝 Backup saved as: $HTML_FILE.backup"
+echo "🎨 Brutalized file: $OUTPUT_FILE"
+```
+
+### Key Takeaways
+
+1. **Bold Over Subtle**: Every element should make a statement
+2. **High Contrast**: Accessibility through extreme contrast
+3. **No Softness**: Hard edges, hard shadows, no blur
+4. **Utilitarian Typography**: Function over form, but bold
+5. **Aggressive Colors**: Neon palette that demands attention
+6. **Raw Interactions**: Snappy, translation-based effects
+
+Neo-brutalist design isn't about being difficult to use—it's about being impossible to ignore.
 ## Commitlint Configuration
 
 ### 1. Create `.commitlintrc.json`
