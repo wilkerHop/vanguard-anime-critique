@@ -1,6 +1,8 @@
 # The Aesthetics of Subversion
 
-A GitHub Pages website featuring a comprehensive methodology for Vanguard Anime Critique, with a detailed case study of Fullmetal Alchemist.
+[![Deploy to GitHub Pages](https://github.com/YOUR_USERNAME/vanguard-anime-critique/actions/workflows/deploy.yml/badge.svg)](https://github.com/YOUR_USERNAME/vanguard-anime-critique/actions/workflows/deploy.yml)
+
+> **⚡ NEO-BRUTALIST DESIGN** - Features aggressive neon colors, thick borders, and hard shadows
 
 ## Overview
 
@@ -31,15 +33,16 @@ This website presents **"The Aesthetics of Subversion"** - a framework for exhau
 - **Tailwind CSS** - Utility-first CSS framework (via CDN)
 - **Chart.js** - Interactive data visualizations
 - **Plotly** - Advanced plotting library
-- **Google Fonts** - Playfair Display (serif) and Inter (sans-serif)
+- **Google Fonts** - Space Mono (monospace) and Archivo Black (display)
 
 ### Design Palette
 
-**"Academic Avant-Garde"** theme:
-- Warm Neutral (#F2F0E9) - Background
-- Dark Charcoal (#2D2D2A) - Primary text
-- Muted Red (#8C2F2F) - Accent for subversion
-- Slate Blue (#4B5563) - Structural elements
+**"Neo-Brutalist"** theme:
+- Neon Yellow (#FFFF00) - Primary accent
+- Hot Pink (#FF00FF) - Secondary accent
+- Cyan (#00FFFF) - Tertiary accent
+- Black (#000000) - Borders and text
+- White (#FFFFFF) - Background
 
 ## Local Development
 
@@ -75,9 +78,13 @@ This website is configured for automatic deployment to GitHub Pages using GitHub
    - Go to repository Settings → Pages
    - Under "Build and deployment", select **Source: GitHub Actions**
 
-4. **Automatic Deployment**:
+4. **Update the Status Badge** (in README.md):
+   - Replace `YOUR_USERNAME` and `vanguard-anime-critique` with your actual GitHub username and repository name in the badge URL
+
+5. **Automatic Deployment**:
    - The included workflow (`.github/workflows/deploy.yml`) will automatically deploy on every push to main
    - Your site will be available at: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
+   - The status badge will show deployment status (passing/failing)
 
 ## Project Structure
 
